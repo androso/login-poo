@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>Crear perfil</title>
+	</head>
+	<body>
+		<div class="crear-perfil-container">
+			<h1 class="crear-perfil-title">Crear Perfil</h1>
+			<div class="crear-perfil__form">
+				<div>
+					<label for="nombre">Nombre</label>
+					<input id="nombre" type="text" />
+				</div>
+				<div>
+					<label for="fechaNacimiento">Fecha de nacimiento</label>
+					<input id="fechaNacimiento" type="text" />
+				</div>
+				<div>
+					<label for="genero">Genero</label>
+					<input id="genero" type="text" />
+				</div>
+				<div>
+					<label for="departamento">Departamento</label>
+					<input id="departamento" type="text" />
+				</div>
+				<div>
+					<label for="ciudad">Ciudad</label>
+					<input id="ciudad" type="text" />
+				</div>
+				<div>
+					<label for="numTelefono">Número de teléfono</label>
+					<input id="numTelefono" type="number" />
+				</div>
+				<div>
+					<label for="descripcion">Descripción</label>
+					<textarea id="descripcion"></textarea>
+				</div>
+				<button onclick="crearPerfil()" class="btn">Enviar</button>
+			</div>
+		</div>
+		<script src="./js/script.js"></script>
+	</body>
+</html>

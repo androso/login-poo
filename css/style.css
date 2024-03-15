@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.contenedor {
+	min-height: 100vh;
+	min-width: 100vw;
+    background-color: #333;
+    color: #fafafa;
+	display: flex;
+	flex-direction: column; /* Para alinear verticalmente */
+	justify-content: center; /* Centrar verticalmente */
+	align-items: center; /* Centrar horizontalmente */
+}
+
+.crear-perfil-container {
+	min-width: 100vw;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #333;
+	color: #fafafa;
+}
+
+.crear-perfil-title {
+	margin-bottom: 1.5rem;
+}
+.crear-perfil__form div {
+	margin-bottom: 0.5rem;
+}
+.crear-perfil__form div label {
+	display: block;
+}
+
+.btn {
+	padding: 0.6rem 1rem;
+	cursor: pointer;
+}
