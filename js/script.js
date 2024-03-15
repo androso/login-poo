@@ -1,3 +1,4 @@
+
 class Sesion {
     constructor(usuario, pass, bdusuario, bdpwd) {
         this.usuario = usuario
@@ -27,17 +28,42 @@ class usuario extends Sesion {
     constructor(usuario, pass, bdusuario, bdpwd) {
         super(usuario, pass, bdusuario, bdpwd)
     }
+
+    obtenerPerfil() {
+        return JSON.parse(localStorage.getItem('perfil'))
+    }
+
+    guardarPerfil(perfil) {
+        localStorage.setItem('perfil', JSON.stringify(perfil))
+    }
 }
 
 function login() {
     let user = document.getElementById('user').value
     let pwd = document.getElementById('pwd').value
 
-    Consulta = new usuario(user, pwd, 'William', '123')
-    Consulta.validar()
+    usuario = new usuario(user, pwd, 'William', '123')
+    usuario.validar()
 }
 
 function crearPerfil(event) {
+    // guardar en local storage la informacion
+    // reenviar a /perfil 
+    const urlQuery = obtenerInfoUrlQueryParams();
+    window.location.href = `/perfil.html${urlQuery}`
+}
+
+function editarPerfil() {
+    const urlQuery = window.location.search;
+    window.location.href = `/editar.html${urlQuery}`
+}
+
+function guardarPerfil() {
+    const urlQuery = obtenerInfoUrlQueryParams();
+    window.location.href = `/perfil.html${urlQuery}`
+}
+
+function obtenerInfoUrlQueryParams() {
     const nombre = document.getElementById("nombre").value
     const fechaNacimiento = document.getElementById("fechaNacimiento").value
     const genero = document.getElementById("genero").value
@@ -45,26 +71,6 @@ function crearPerfil(event) {
     const ciudad = document.getElementById("ciudad").value
     const numTelefono = document.getElementById("numTelefono").value
     const descripcion = document.getElementById("descripcion").value
-    const $body = document.getElementsByTagName("body")[0];
-
-    $body.innerHTML = `
-    <div class="contenedor">
-        <h1 class="crear-perfil-title">Perfil</h1>
-        <div>
-            <p>Nombre: ${nombre}</p> 
-            <br>
-            <p>Fecha de Nacimiento: ${fechaNacimiento}</p> 
-            <br>
-            <p>Genero: ${genero}</p>
-            <br>
-            <p>Departamento: ${departamento}</p>
-            <br>
-            <p>Ciudad: ${ciudad}</p>
-            <br>
-            <p>Numero de telefono: ${numTelefono}</p>
-            <br>
-            <p>Descripcion: ${descripcion}</p>
-        </div>
-    </div> 
-    `
+    const url = "?nombre=" + nombre + "&fechaNacimiento=" + fechaNacimiento + "&genero=" + genero + "&departamento=" + departamento + "&ciudad=" + ciudad + "&numTelefono=" + numTelefono + "&descripcion=" + descripcion
+    return url
 }

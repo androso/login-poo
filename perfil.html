@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>Ver Perfil</title>
+	</head>
+	<body>
+		<div class="contenedor">
+			<h1 class="crear-perfil-title">Perfil</h1>
+			<div>
+				<p id="nombre"></p>
+				<br />
+				<p id="fechaNacimiento">Fecha de Nacimiento:</p>
+				<br />
+				<p id="genero">Genero:</p>
+				<br />
+				<p id="departamento">Departamento:</p>
+				<br />
+				<p id="ciudad">Ciudad:</p>
+				<br />
+				<p id="numTelefono">Numero de telefono:</p>
+				<br />
+				<p id="descripcion">Descripcion:</p>
+				<br />
+				<button onclick="editarPerfil()" class="btn">Editar</button>
+			</div>
+		</div>
+		<script src="./js/script.js"></script>
+		<script>
+			// obtener datos de urlqueryparams y mostrarlos
+			const urlParams = new URLSearchParams(window.location.search);
+			document.getElementById("nombre").innerHTML = `Nombre: ${urlParams.get(
+				"nombre"
+			)}`;
+			document.getElementById(
+				"fechaNacimiento"
+			).innerHTML = `Fecha de Nacimiento: ${urlParams.get("fechaNacimiento")}`;
+			document.getElementById("genero").innerHTML = `Genero: ${urlParams.get(
+				"genero"
+			)}`;
+			document.getElementById(
+				"departamento"
+			).innerHTML = `Departamento: ${urlParams.get("departamento")}`;
+			document.getElementById("ciudad").innerHTML = `Ciudad: ${urlParams.get(
+				"ciudad"
+			)}`;
+			document.getElementById(
+				"numTelefono"
+			).innerHTML = `Numero de telefono: ${urlParams.get("numTelefono")}`;
+			document.getElementById(
+				"descripcion"
+			).innerHTML = `Descripcion: ${urlParams.get("descripcion")}`;
+		</script>
+	</body>
+</html>

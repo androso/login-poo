@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<title>Editar perfil</title>
+	</head>
+	<body>
+		<div class="crear-perfil-container">
+			<h1 class="crear-perfil-title">Editar Perfil</h1>
+			<div class="crear-perfil__form">
+				<div>
+					<label for="nombre">Nombre</label>
+					<input id="nombre" type="text" />
+				</div>
+				<div>
+					<label for="fechaNacimiento">Fecha de nacimiento</label>
+					<input id="fechaNacimiento" type="text" />
+				</div>
+				<div>
+					<label for="genero">Genero</label>
+					<input id="genero" type="text" />
+				</div>
+				<div>
+					<label for="departamento">Departamento</label>
+					<input id="departamento" type="text" />
+				</div>
+				<div>
+					<label for="ciudad">Ciudad</label>
+					<input id="ciudad" type="text" />
+				</div>
+				<div>
+					<label for="numTelefono">Número de teléfono</label>
+					<input id="numTelefono" type="number" />
+				</div>
+				<div>
+					<label for="descripcion">Descripción</label>
+					<textarea id="descripcion"></textarea>
+				</div>
+				<button onclick="guardarPerfil()" class="btn">Guardar</button>
+			</div>
+		</div>
+		<script src="./js/script.js"></script>
+		<script>
+			const $nombre = document.getElementById("nombre");
+			const $fechaNacimiento = document.getElementById("fechaNacimiento");
+			const $genero = document.getElementById("genero");
+			const $departamento = document.getElementById("departamento");
+			const $ciudad = document.getElementById("ciudad");
+			const $numTelefono = document.getElementById("numTelefono");
+			const $descripcion = document.getElementById("descripcion");
+			const urlParams = new URLSearchParams(window.location.search);
+			$nombre.defaultValue = urlParams.get("nombre");
+			$fechaNacimiento.defaultValue = urlParams.get("fechaNacimiento");
+			$genero.defaultValue = urlParams.get("genero");
+			$departamento.defaultValue = urlParams.get("departamento");
+			$ciudad.defaultValue = urlParams.get("ciudad");
+			$numTelefono.defaultValue = urlParams.get("numTelefono");
+			$descripcion.defaultValue = urlParams.get("descripcion");
+		</script>
+	</body>
+</html>
